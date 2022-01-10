@@ -1,0 +1,19 @@
+.container {
+	padding: 10px;
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__title {
+		font-size: 18px;
+		font-weight: 600;
+		color: #146356;
+	}
+	&__input {
+		border-radius: 5px;
+		border: 1px solid lightgrey;
+		margin: 4px;
+		padding: 5px;
+	}
+}
