@@ -1,0 +1,14 @@
+@mixin button($type) {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border: none;
+	font-size: 14px;
+	border-radius: 5px;
+	cursor: pointer;
+	@if $type == primary {
+		background: #146356;
+		color: white;
+		font-weight: bold;
+	}
+}
