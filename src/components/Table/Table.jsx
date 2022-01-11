@@ -49,9 +49,17 @@ const columns = [
 	},
 ];
 
-
-/* Temporary data */
-
 export default function Table({ data }) {
-	return <DataTable columns={columns} data={data} highlightOnHover pagination striped></DataTable>;
+	const localData = JSON.parse(localStorage.getItem("employees"));
+	const dataArr = [...data, ...localData];
+
+	return (
+		<DataTable
+			columns={columns}
+			data={dataArr}
+			highlightOnHover
+			pagination
+			striped
+		></DataTable>
+	);
 }
