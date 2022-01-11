@@ -1,18 +1,21 @@
 import React from "react";
-import { useState } from "react";
 import Logo from "./logo.png";
+import { Link } from "react-router-dom";
 import { ReactComponent as UserIcon } from "./usericon.svg";
 import "./navbar.scss";
 
-export default function Navbar({onOpen}) {
-
+export default function Navbar() {
 	return (
 		<nav className="navbar">
-			<img className="navbar__logo" src={Logo} alt="" />
-			<button className="navbar__btn" onClick={onOpen}>
-				<UserIcon className="navbar__btn__icon" />
-				<span>New employee</span>
-			</button>
+			<Link to="/">
+				<img className="navbar__logo" src={Logo} alt="" />
+			</Link>
+			<Link to="/createEmployee">
+				<button className="navbar__btn">
+					<UserIcon className="navbar__btn__icon" />
+					<span>New employee</span>
+				</button>
+			</Link>
 		</nav>
 	);
 }
