@@ -1,0 +1,14 @@
+@import "src/style/mixins.scss";
+
+.form {
+	border: 1px solid grey;
+	&__section {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+		margin: 10px 0px;
+		&__input {
+			@include input();
+		}
+	}
+}
