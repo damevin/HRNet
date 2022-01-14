@@ -2,16 +2,18 @@ import React from "react";
 import "./home.scss";
 import Table from "../../components/Table/Table";
 import { useState } from "react";
-import data from "../../data/mockedEmployees.json"
-
+import data from "../../data/mockedEmployees.json";
 
 export default function Home() {
 	const [foundEmployees, setFoundEmployees] = useState("");
+	const localData = JSON.parse(localStorage.getItem("employees"));
+	let dataArr = [];
+	localData ? (dataArr = [...data, ...localData]) : (dataArr = [...data]);
 
 	const handleSearch = (event) => {
 		const query = event.target.value;
 		if (query.length >= 3) {
-			const results = data.filter((employee) => {
+			const results = dataArr.filter((employee) => {
 				return (
 					employee.lastname.toLowerCase().startsWith(query.toLowerCase()) ||
 					employee.firstname.toLowerCase().startsWith(query.toLowerCase()) ||
@@ -20,7 +22,7 @@ export default function Home() {
 			});
 			setFoundEmployees(results);
 		} else {
-			setFoundEmployees(data);
+			setFoundEmployees(localData);
 		}
 	};
 	return (
@@ -35,7 +37,7 @@ export default function Home() {
 				/>
 			</header>
 			<p>{data.id}</p>
-			<Table data={foundEmployees || data} />
+			<Table data={foundEmployees || localData} />
 		</main>
 	);
 }
