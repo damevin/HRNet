@@ -50,8 +50,10 @@ const columns = [
 ];
 
 export default function Table({ data }) {
+
 	const localData = JSON.parse(localStorage.getItem("employees"));
-	const dataArr = [...data, ...localData];
+	let dataArr = [];
+	localData ? dataArr = [...data, ...localData] : dataArr = [...data]
 
 	return (
 		<DataTable
@@ -60,7 +62,7 @@ export default function Table({ data }) {
 			highlightOnHover
 			pagination
 			striped
-			paginationPerPage={20}
+			paginationPerPage={10}
 		></DataTable>
 	);
 }
