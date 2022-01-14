@@ -2,6 +2,7 @@ import React from "react";
 import { useRef, useState } from "react";
 import { Modal } from "@damevin/reactlightmodal";
 import { Link } from "react-router-dom";
+import statesData from "../../data/states.js";
 import "./formemployee.scss";
 
 export default function FormEmployee() {
@@ -95,12 +96,14 @@ export default function FormEmployee() {
 				</div>
 				<div className="form__section">
 					<label className="form__section__label">State</label>
-					{/* To do map method with all avaible states */}
-					<select name="cars" id="cars" form="carform" required ref={employeeForm.state}>
-						<option value="volvo">Volvo</option>
-						<option value="saab">Saab</option>
-						<option value="opel">Opel</option>
-						<option value="audi">Audi</option>
+					<select name="state" className="form__section__input" required ref={employeeForm.state}>
+						{statesData.map((state, index) => {
+							return (
+								<option key={index} value={state.abbreviation}>
+									{state.name}
+								</option>
+							);
+						})}
 					</select>
 				</div>
 				<div className="form__section">
@@ -114,12 +117,17 @@ export default function FormEmployee() {
 				</div>
 				<div className="form__section">
 					<label className="form__section__label">Department</label>
-					{/* To do map method with all avaible departement */}
-					<select name="cars" id="cars" form="carform" ref={employeeForm.department}>
-						<option value="volvo">Volvo</option>
-						<option value="saab">Saab</option>
-						<option value="opel">Opel</option>
-						<option value="audi">Audi</option>
+					<select
+						name="department"
+						className="form__section__input"
+						required
+						ref={employeeForm.department}
+					>
+						<option value="Sales">Sales</option>
+						<option value="Marketing">Marketing</option>
+						<option value="Engineering">Engineering</option>
+						<option value="Human resources">Human Resources</option>
+						<option value="Legal">Legal</option>
 					</select>
 				</div>
 
@@ -127,7 +135,7 @@ export default function FormEmployee() {
 					Save
 				</button>
 			</form>
-
+	
 			<Modal
 				isOpen={isOpen}
 				canClose={true}
