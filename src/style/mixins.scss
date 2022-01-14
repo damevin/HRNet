@@ -5,11 +5,29 @@
 	display: flex;
 	font-size: 14px;
 	justify-content: space-between;
+	text-decoration: none;
 	cursor: pointer;
+	opacity: 1;
+	transition: all 0.3s ease 0s;
+	&:hover {
+		cursor: pointer;
+		opacity: 0.75;
+	}
 	@if $type == primary {
 		background: #146356;
 		color: white;
 		font-weight: bold;
+	}
+	@if $type == submit {
+		background: #24a19c;
+		color: white;
+		font-weight: bold;
+		padding: 10px;
+	}
+	@if $type == danger {
+		background: crimson;
+		color: white;
+		padding: 10px;
 	}
 }
 
@@ -17,5 +35,5 @@
 	border-radius: 5px;
 	border: 1px solid lightgray;
 	font-size: 14px;
-	padding: 0.5rem 0.2rem;
+	padding: 0.2rem;
 }
