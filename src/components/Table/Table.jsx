@@ -1,6 +1,7 @@
-import React from "react";
 import "./table.scss";
 import DataTable from "react-data-table-component";
+import React from "react";
+
 const columns = [
 	{
 		name: "First Name",
@@ -50,7 +51,6 @@ const columns = [
 ];
 
 export default function Table({ data }) {
-
 	const localData = JSON.parse(localStorage.getItem("employees"));
 	let dataArr = [];
 	localData ? dataArr = [...data, ...localData] : dataArr = [...data]
