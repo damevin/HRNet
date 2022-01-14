@@ -1,0 +1,9 @@
+@import "src/style/mixins.scss";
+@import "../../style/variables.scss";
+
+@media screen and (min-width: $mediumdevices) {
+	.wrapper {
+		max-width: 700px;
+		margin: 20px auto;
+	}
+}
