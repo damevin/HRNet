@@ -51,14 +51,11 @@ const columns = [
 ];
 
 export default function Table({ data }) {
-	const localData = JSON.parse(localStorage.getItem("employees"));
-	let dataArr = [];
-	localData ? dataArr = [...data, ...localData] : dataArr = [...data]
 
 	return (
 		<DataTable
 			columns={columns}
-			data={dataArr}
+			data={data}
 			highlightOnHover
 			pagination
 			striped
