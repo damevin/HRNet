@@ -60,6 +60,7 @@ export default function Table({ data }) {
 			highlightOnHover
 			pagination
 			striped
+			paginationPerPage={20}
 		></DataTable>
 	);
 }
