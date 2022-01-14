@@ -130,12 +130,16 @@ export default function FormEmployee() {
 						<option value="Legal">Legal</option>
 					</select>
 				</div>
-
-				<button className="form__btn" type="submit">
-					Save
-				</button>
+				<footer className="form__footer">
+					<button className="form__footer__btn" type="submit">
+						Save
+					</button>
+					<Link to="/">
+						<button className="form__footer__btn--negative">Cancel</button>
+					</Link>
+				</footer>
 			</form>
-	
+
 			<Modal
 				isOpen={isOpen}
 				canClose={true}
