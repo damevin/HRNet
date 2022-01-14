@@ -1,7 +1,7 @@
 @import "src/style/mixins.scss";
+@import "src/style/variables.scss";
 
 .form {
-	border: 1px solid grey;
 	&__section {
 		display: flex;
 		flex-direction: column;
@@ -9,6 +9,18 @@
 		margin: 10px 0px;
 		&__input {
 			@include input();
+		}
+	}
+	&__footer {
+		padding: 10px 0px;
+		display: flex;
+		flex-direction: row-reverse;
+		gap: 10px;
+		&__btn {
+			@include button(submit);
+		}
+		&__btn--negative {
+			@include button(danger);
 		}
 	}
 }
