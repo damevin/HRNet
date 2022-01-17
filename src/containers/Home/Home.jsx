@@ -22,7 +22,7 @@ export default function Home() {
 			});
 			setFoundEmployees(results);
 		} else {
-			setFoundEmployees(localData);
+			setFoundEmployees(dataArr);
 		}
 	};
 	return (
@@ -37,7 +37,7 @@ export default function Home() {
 				/>
 			</header>
 			<p>{data.id}</p>
-			<Table data={foundEmployees || localData} />
+			<Table data={foundEmployees || dataArr} />
 		</main>
 	);
 }
