@@ -29,6 +29,11 @@
 		color: white;
 		padding: 10px;
 	}
+	@if $type == secondary {
+		background: #304ffe;
+		color: white;
+		padding: 10px;
+	}
 }
 
 @mixin input() {

@@ -147,9 +147,9 @@ export default function FormEmployee() {
 				footerContent={
 					<>
 						<Link to="/">
-							<button>Employees list</button>
+							<button className="btn__primary">Employees list</button>
 						</Link>
-						<button>Add another</button>
+						<button className="btn__secondary">Add another</button>
 					</>
 				}
 				title="Great!"
