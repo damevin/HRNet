@@ -11,7 +11,7 @@ export default function Navbar() {
 			<Link to="/">
 				<img className="navbar__logo" alt="" srcSet={(Logo, LogoWebp)}></img>
 			</Link>
-			<Link to="/createEmployee">
+			<Link to="/create-employee">
 				<button className="navbar__btn">
 					<UserIcon className="navbar__btn__icon" />
 					<span>New employee</span>
