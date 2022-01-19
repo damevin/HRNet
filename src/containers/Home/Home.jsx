@@ -1,8 +1,11 @@
-import React from "react";
-import "./home.scss";
-import Table from "../../components/Table/Table";
+import React, { lazy, Suspense } from "react";
 import { useState } from "react";
 import data from "../../data/mockedEmployees.json";
+import "./home.scss";
+
+const TableComponent = lazy(() => import("../../components/Table/Table"));
+
+const renderLoader = () => <p>Loading...</p>;
 
 export default function Home() {
 	const [foundEmployees, setFoundEmployees] = useState("");
@@ -26,18 +29,20 @@ export default function Home() {
 		}
 	};
 	return (
-		<main className="container">
-			<header className="container__header">
-				<h1 className="container__title">Dashboard</h1>
-				<input
-					type="search"
-					placeholder="Search..."
-					className="container__input"
-					onChange={handleSearch}
-				/>
-			</header>
-			<p>{data.id}</p>
-			<Table data={foundEmployees || dataArr} />
-		</main>
+		<Suspense fallback={renderLoader()}>
+			<main className="container">
+				<header className="container__header">
+					<h1 className="container__title">Dashboard</h1>
+					<input
+						type="search"
+						placeholder="Search..."
+						className="container__input"
+						onChange={handleSearch}
+					/>
+				</header>
+				<p>{data.id}</p>
+				<TableComponent data={foundEmployees || dataArr} />
+			</main>
+		</Suspense>
 	);
 }

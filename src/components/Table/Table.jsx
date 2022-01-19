@@ -1,5 +1,8 @@
 import "./table.scss";
-import DataTable from "react-data-table-component";
+import React, { lazy, Suspense } from "react";
+const DataTableComponent = lazy(() => import("react-data-table-component"));
+
+const renderLoader = () => <p>Loading...</p>;
 
 const columns = [
 	{
@@ -50,15 +53,16 @@ const columns = [
 ];
 
 export default function Table({ data }) {
-
 	return (
-		<DataTable
-			columns={columns}
-			data={data}
-			highlightOnHover
-			pagination
-			striped
-			paginationPerPage={10}
-		></DataTable>
+		<Suspense fallback={renderLoader()}>
+			<DataTableComponent
+				columns={columns}
+				data={data}
+				highlightOnHover
+				pagination
+				striped
+				paginationPerPage={10}
+			></DataTableComponent>
+		</Suspense>
 	);
 }
