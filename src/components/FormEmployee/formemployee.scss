@@ -31,3 +31,9 @@
 		@include button(secondary);
 	}
 }
+
+.modal {
+	&__content {
+		font-size: 13px;
+	}
+}
