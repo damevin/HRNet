@@ -41,10 +41,6 @@ export default function FormEmployee() {
 		localStorage.setItem("employees", JSON.stringify(employees));
 		toggleModal();
 		event.target.reset();
-		/** TO DO
-		 * - Clear form
-		 * - Display modal when succeeds
-		 *  */
 	};
 
 	return (
@@ -154,7 +150,7 @@ export default function FormEmployee() {
 				}
 				title="Great!"
 				haveFooter={true}
-				modalContent={<p>Your employee has been correctly added to your employees list!</p>}
+				modalContent={<span className="modal__content">Your employee has been correctly added to your employees list!</span>}
 				toggleModal={toggleModal}
 			></Modal>
 		</>
