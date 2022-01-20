@@ -1,0 +1,27 @@
+.container {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.error-img {
+	max-height: 500px;
+	width: 100%;
+	object-fit: contain;
+}
+
+.title {
+	font-weight: bold;
+	font-size: 3rem;
+	margin: 20px;
+}
+
+.details {
+	font-size: 1.4rem;
+	padding: 1rem;
+}
+
+.link {
+	color: #00bc77;
+}
