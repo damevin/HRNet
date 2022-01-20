@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./containers/Home/Home";
 import CreateUser from "./containers/CreateUser/CreateUser"
 import Error from "./containers/Error/Error";
+import Home from "./containers/Home/Home";
 
 const Router = () => {
 	return (
