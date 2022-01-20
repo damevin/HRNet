@@ -1,7 +1,7 @@
-import React, { lazy, Suspense } from "react";
+import "./home.scss";
 import { useState } from "react";
 import data from "../../data/mockedEmployees.json";
-import "./home.scss";
+import React, { lazy, Suspense } from "react";
 
 const TableComponent = lazy(() => import("../../components/Table/Table"));
 
