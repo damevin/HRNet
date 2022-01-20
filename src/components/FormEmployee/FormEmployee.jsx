@@ -1,9 +1,9 @@
-import React from "react";
-import { useRef, useState } from "react";
-import { Modal } from "reactlightmodal-by-damevin";
-import { Link } from "react-router-dom";
-import statesData from "../../data/states.js";
 import "./formemployee.scss";
+import { Link } from "react-router-dom";
+import { Modal } from "reactlightmodal-by-damevin";
+import { useRef, useState } from "react";
+import React from "react";
+import statesData from "../../data/states.js";
 
 export default function FormEmployee() {
 	const [isOpen, setOpen] = useState();
