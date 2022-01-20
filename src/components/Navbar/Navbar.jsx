@@ -1,9 +1,9 @@
-import React from "react";
-import Logo from "./logo.png";
-import LogoWebp from "./logo.webp";
+import "./navbar.scss";
 import { Link } from "react-router-dom";
 import { ReactComponent as UserIcon } from "./usericon.svg";
-import "./navbar.scss";
+import Logo from "./logo.png";
+import LogoWebp from "./logo.webp";
+import React from "react";
 
 export default function Navbar() {
 	return (
